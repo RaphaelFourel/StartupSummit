@@ -1,0 +1,47 @@
+
+
+
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+      {% if registered %}
+        <h1>Thank you for registering!</h1>
+        <h4>putaind</h4>
+        <h3>You may know register your team members now.</h3>
+
+
+
+        <form enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+          <input type="submit" name="" value="Register">
+        </form>
+
+
+      {% else %}
+        <h1>Group Register Here</h1>
+        <h3>Just fill out the form.</h3>
+        <h3>Group Leader Please register first!</h3>
+
+        <form enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+          <input type="submit" name="" value="Register">
+        </form>
+
+
+
+
+
+      {% endif %}
+
+    </div>
+
+  </div>
+
+{% endblock %}

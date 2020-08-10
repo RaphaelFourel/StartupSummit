@@ -1,0 +1,48 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>McGill Startup Summit</h1>
+    {% if user.is_authenticated %}
+        <h2>Welcome {{ user.username }}!</h2>
+    {% else %}
+        <h2>Welcome to the site!</h2>
+
+
+        <div class="container">
+
+
+
+        <ul class="container1">
+
+
+
+
+
+            <li><a class="navbar-link" href="{% url 'basic_app:register' %}">Register</a></li>
+
+
+
+
+
+
+
+
+        
+
+
+
+        </ul>
+
+
+
+
+
+
+            </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
